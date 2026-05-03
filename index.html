@@ -8,8 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   /* =========================================
-     CONFIGURATION — Replace these with your
-     actual SheetDB API URLs after setup.
+     STYLES — Modern Scouting Platform
      ========================================= */
 
   :root {
@@ -50,7 +49,6 @@
     z-index: 9999;
   }
 
-  /* -------- HEADER -------- */
   #header {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
@@ -112,11 +110,9 @@
   .btn-solid:hover { background: var(--red-bright); box-shadow: 0 0 20px var(--red-glow); }
   .btn-lg { padding: 0.9rem 2.4rem; font-size: 1.1rem; }
 
-  /* -------- VIEWS -------- */
   .view { display: none; }
   .view.active { display: block; }
 
-  /* -------- HERO -------- */
   #hero {
     min-height: 100vh;
     display: flex; flex-direction: column; justify-content: center;
@@ -125,7 +121,6 @@
     overflow: hidden;
   }
 
-  /* Diagonal red stripe background */
   #hero::before {
     content: '';
     position: absolute; top: -10%; right: -5%;
@@ -182,7 +177,6 @@
     margin-top: 5rem;
     display: flex; gap: 3rem; flex-wrap: wrap;
   }
-  .stat-item { }
   .stat-num {
     font-family: var(--font-display);
     font-size: 2.8rem;
@@ -200,21 +194,12 @@
     margin-top: 0.3rem;
   }
 
-  /* DIAGONAL PATTERN */
   .hero-grid-bg {
     position: absolute; inset: 0;
-    background-image:
-      repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 40px,
-        rgba(139,0,0,0.025) 40px,
-        rgba(139,0,0,0.025) 41px
-      );
+    background-image: repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(139,0,0,0.025) 40px, rgba(139,0,0,0.025) 41px);
     pointer-events: none;
   }
 
-  /* -------- ABOUT SECTION -------- */
   #about-section {
     padding: 100px 5vw;
     display: grid;
@@ -261,7 +246,6 @@
   }
   .feature-card p { color: var(--muted); font-size: 0.9rem; }
 
-  /* -------- AUTH PAGE -------- */
   #auth-page {
     min-height: 100vh;
     display: flex; align-items: center; justify-content: center;
@@ -281,9 +265,8 @@
     font-size: 2.5rem;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
   }
-  .auth-header p { color: var(--muted); margin-top: 0.5rem; font-size: 0.9rem; }
+  .auth-header p { color: var(--muted); margin-top: 0.5rem; }
 
   .auth-tab-row {
     display: flex;
@@ -291,8 +274,7 @@
     margin-bottom: 2rem;
   }
   .auth-tab {
-    flex: 1;
-    padding: 0.8rem;
+    flex: 1; padding: 0.8rem;
     text-align: center;
     font-family: var(--font-display);
     font-size: 1rem;
@@ -302,11 +284,7 @@
     color: var(--muted);
     cursor: pointer;
     border-bottom: 2px solid transparent;
-    transition: all 0.2s;
     background: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
   }
   .auth-tab.active {
     color: var(--text);
@@ -321,16 +299,13 @@
   .role-btn {
     flex: 1; padding: 0.75rem;
     font-family: var(--font-display);
-    font-size: 0.95rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
     text-transform: uppercase;
     background: var(--surface2);
     border: 1.5px solid var(--border);
     color: var(--muted);
     border-radius: 4px;
     cursor: pointer;
-    transition: all 0.2s;
   }
   .role-btn.active {
     background: var(--red);
@@ -349,30 +324,20 @@
     color: var(--muted);
     margin-bottom: 0.5rem;
   }
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
+  .form-group input, .form-group select, .form-group textarea {
     width: 100%;
     background: var(--surface2);
     border: 1px solid var(--border);
     color: var(--text);
     padding: 0.75rem 1rem;
-    font-family: var(--font-body);
     font-size: 0.95rem;
     border-radius: 4px;
     outline: none;
-    transition: border-color 0.2s;
-    -webkit-appearance: none;
   }
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
     border-color: var(--red-bright);
   }
   .form-group textarea { min-height: 90px; resize: vertical; }
-  .form-group select option { background: var(--surface2); }
-
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
   .form-submit { width: 100%; padding: 0.9rem; margin-top: 0.5rem; }
 
@@ -395,8 +360,7 @@
   .alert.success { background: rgba(0,139,0,0.15); border: 1px solid #005000; color: #80ff80; }
   .alert.show { display: block; }
 
-  /* -------- PLAYER DASHBOARD -------- */
-  #player-dash {
+  #player-dash, #scout-feed {
     padding: 90px 5vw 60px;
     min-height: 100vh;
   }
@@ -433,7 +397,6 @@
     color: var(--muted);
     margin-bottom: 1.5rem;
   }
-
   .profile-video-embed {
     width: 100%; aspect-ratio: 16/9;
     background: var(--black);
@@ -449,31 +412,11 @@
     color: var(--muted); font-size: 0.9rem;
   }
 
-  /* -------- SCOUT FEED -------- */
-  #scout-feed {
-    padding: 90px 5vw 60px;
-    min-height: 100vh;
-  }
-
   .feed-controls {
     display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
     margin-bottom: 2.5rem;
   }
-
-  .search-bar {
-    flex: 1; min-width: 220px;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 0.65rem 1rem;
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    border-radius: 4px;
-    outline: none;
-  }
-  .search-bar:focus { border-color: var(--red-bright); }
-
-  .filter-select {
+  .search-bar, .filter-select {
     background: var(--surface2);
     border: 1px solid var(--border);
     color: var(--text);
@@ -482,16 +425,15 @@
     font-size: 0.9rem;
     border-radius: 4px;
     outline: none;
-    cursor: pointer;
   }
-  .filter-select:focus { border-color: var(--red-bright); }
+  .search-bar { flex: 1; min-width: 220px; }
+  .search-bar:focus, .filter-select:focus { border-color: var(--red-bright); }
 
   .talent-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 1.5rem;
   }
-
   .player-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -503,11 +445,9 @@
     transform: translateY(-4px);
     box-shadow: 0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px var(--red);
   }
-
   .card-video {
     width: 100%; aspect-ratio: 16/9;
     background: var(--black);
-    position: relative;
   }
   .card-video iframe { width: 100%; height: 100%; border: none; display: block; }
   .card-video-placeholder {
@@ -515,81 +455,53 @@
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     color: var(--muted); font-size: 0.85rem; gap: 0.5rem;
   }
-  .card-video-placeholder svg { opacity: 0.3; }
-
   .card-body { padding: 1.2rem; }
-
   .card-name {
     font-family: var(--font-display);
     font-size: 1.4rem;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
     margin-bottom: 0.3rem;
   }
-
   .card-position {
     display: inline-block;
     font-family: var(--font-display);
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.12em;
-    text-transform: uppercase;
     background: var(--red);
     color: #fff;
     padding: 0.2rem 0.6rem;
     border-radius: 2px;
     margin-bottom: 0.8rem;
   }
-
   .card-meta {
     display: flex; gap: 1.2rem; flex-wrap: wrap;
-    font-size: 0.85rem;
-    color: var(--muted);
+    font-size: 0.85rem; color: var(--muted);
     margin-bottom: 0.8rem;
   }
-  .card-meta span { display: flex; align-items: center; gap: 0.3rem; }
-
   .card-bio {
-    font-size: 0.85rem;
-    color: var(--muted);
-    line-height: 1.6;
-    margin-bottom: 1rem;
+    font-size: 0.85rem; color: var(--muted);
+    line-height: 1.6; margin-bottom: 1rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-
   .card-contact {
     display: flex; flex-direction: column; gap: 0.4rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border);
+    padding-top: 1rem; border-top: 1px solid var(--border);
   }
   .contact-link {
     display: inline-flex; align-items: center; gap: 0.4rem;
-    font-size: 0.85rem;
-    color: var(--red-bright);
+    font-size: 0.85rem; color: var(--red-bright);
     text-decoration: none;
-    transition: color 0.2s;
   }
   .contact-link:hover { color: #fff; }
-
   .empty-state {
-    grid-column: 1/-1;
-    text-align: center;
-    padding: 5rem 2rem;
-    color: var(--muted);
+    grid-column: 1/-1; text-align: center;
+    padding: 5rem 2rem; color: var(--muted);
   }
-  .empty-state h3 {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
-
-  /* SPINNER */
   .spinner {
     display: inline-block;
     width: 22px; height: 22px;
@@ -599,68 +511,24 @@
     animation: spin 0.7s linear infinite;
   }
   @keyframes spin { to { transform: rotate(360deg); } }
-
   .loading-row {
     display: flex; align-items: center; justify-content: center;
     gap: 1rem; padding: 3rem;
-    grid-column: 1/-1;
-    color: var(--muted); font-size: 0.9rem;
+    grid-column: 1/-1; color: var(--muted);
   }
-
-  /* SETUP BANNER */
-  .setup-banner {
-    background: rgba(139,0,0,0.15);
-    border: 1px solid var(--red);
-    border-radius: 6px;
-    padding: 1.5rem 2rem;
-    margin-bottom: 2rem;
-  }
-  .setup-banner h3 {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--red-bright);
-    margin-bottom: 0.5rem;
-  }
-  .setup-banner p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
-  .setup-banner code {
-    background: var(--black);
-    padding: 0.15rem 0.4rem;
-    border-radius: 3px;
-    font-size: 0.82rem;
-    color: #ffb347;
-  }
-
-  /* USER STATUS */
   .user-chip {
     display: flex; align-items: center; gap: 0.5rem;
     font-family: var(--font-display);
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
+    font-size: 0.9rem; font-weight: 600;
+    text-transform: uppercase; color: var(--muted);
   }
-  .user-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--red-bright);
-    box-shadow: 0 0 6px var(--red-bright);
-  }
-
-  /* MOBILE */
+  .user-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red-bright); box-shadow: 0 0 6px var(--red-bright); }
   @media (max-width: 768px) {
     nav { display: none; }
     #about-section { grid-template-columns: 1fr; }
-    .form-row { grid-template-columns: 1fr; }
-    .hero-stats { gap: 2rem; }
   }
-
-  /* SCROLL ANIMATIONS */
   .fade-up {
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 0; transform: translateY(30px);
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
   .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -668,7 +536,6 @@
 </head>
 <body>
 
-<!-- ======== HEADER ======== -->
 <header id="header">
   <div class="logo" onclick="showView('home')">STUDS<span>MUDD</span></div>
   <nav>
@@ -676,22 +543,14 @@
     <a href="#" onclick="showView('home')">Home</a>
   </nav>
   <div style="display:flex;gap:0.8rem;align-items:center;">
-    <div id="user-status" style="display:none">
-      <div class="user-chip">
-        <div class="user-dot"></div>
-        <span id="username-display"></span>
-      </div>
-    </div>
+    <div id="user-status" style="display:none"><div class="user-chip"><div class="user-dot"></div><span id="username-display"></span></div></div>
     <button class="btn btn-outline" id="login-btn" onclick="showView('auth'); switchTab('login')">Login</button>
     <button class="btn btn-solid" id="register-btn" onclick="showView('auth'); switchTab('register')">Register</button>
     <button class="btn btn-outline" id="logout-btn" style="display:none" onclick="logout()">Logout</button>
   </div>
 </header>
 
-<!-- ======== HOME VIEW ======== -->
 <div id="view-home" class="view active">
-
-  <!-- HERO -->
   <section id="hero">
     <div class="hero-grid-bg"></div>
     <div class="hero-eyebrow">⚽ Global Football Scouting Platform</div>
@@ -702,655 +561,150 @@
       <button class="btn btn-outline btn-lg" onclick="showView('auth'); switchTab('login')">Scout Talent</button>
     </div>
     <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num">180<span>+</span></div>
-        <div class="stat-label">Countries</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">24<span>/7</span></div>
-        <div class="stat-label">Live Talent Feed</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">0<span>$</span></div>
-        <div class="stat-label">Cost to Join</div>
-      </div>
+      <div class="stat-item"><div class="stat-num">180<span>+</span></div><div class="stat-label">Countries</div></div>
+      <div class="stat-item"><div class="stat-num">24<span>/7</span></div><div class="stat-label">Live Talent Feed</div></div>
+      <div class="stat-item"><div class="stat-num">0<span>$</span></div><div class="stat-label">Cost to Join</div></div>
     </div>
   </section>
-
-  <!-- ABOUT -->
   <section id="about-section">
-    <div>
-      <div class="about-label">What Is StudsMudd</div>
-      <h2 class="about-title">Your Stage.<br>Your Career.</h2>
-      <p class="about-body">StudsMudd tears down the walls between untapped talent and professional opportunities. Whether you're a striker in Lagos, a keeper in Lahore, or a midfielder in Lima — if you have the skill, we put you in front of the scouts who matter.</p>
-      <br>
-      <p class="about-body">Our platform is built for two things: helping players get seen, and helping scouts find the next star before anyone else does.</p>
-    </div>
-    <div class="feature-cards fade-up">
-      <div class="feature-card">
-        <h4>🎯 Player Profiles</h4>
-        <p>Build a complete scouting profile with your position, age, location, bio, and a direct link to your highlight reel.</p>
-      </div>
-      <div class="feature-card">
-        <h4>🔍 Scout Talent Feed</h4>
-        <p>Browse, filter, and watch embedded highlight clips from players across every position and region globally.</p>
-      </div>
-      <div class="feature-card">
-        <h4>📲 Direct Contact</h4>
-        <p>No middlemen. Scouts see your email and WhatsApp and can reach you directly to start the conversation.</p>
-      </div>
-    </div>
+    <div><div class="about-label">What Is StudsMudd</div><h2 class="about-title">Your Stage.<br>Your Career.</h2><p class="about-body">StudsMudd tears down the walls between untapped talent and professional opportunities. Whether you're a striker in Lagos, a keeper in Lahore, or a midfielder in Lima — if you have the skill, we put you in front of the scouts who matter.</p><br><p class="about-body">Our platform is built for two things: helping players get seen, and helping scouts find the next star before anyone else does.</p></div>
+    <div class="feature-cards fade-up"><div class="feature-card"><h4>🎯 Player Profiles</h4><p>Build a complete scouting profile with your position, age, location, bio, and a direct link to your highlight reel.</p></div><div class="feature-card"><h4>🔍 Scout Talent Feed</h4><p>Browse, filter, and watch embedded highlight clips from players across every position and region globally.</p></div><div class="feature-card"><h4>📲 Direct Contact</h4><p>No middlemen. Scouts see your email and WhatsApp and can reach you directly to start the conversation.</p></div></div>
   </section>
+</div>
 
-</div><!-- /home view -->
-
-<!-- ======== AUTH VIEW ======== -->
 <div id="view-auth" class="view">
-  <section id="auth-page">
-    <div class="auth-container">
-      <div class="auth-header">
-        <h2>StudsMudd</h2>
-        <p>Your global football career starts here</p>
-      </div>
-
-      <!-- TABS -->
-      <div class="auth-tab-row">
-        <button class="auth-tab active" id="tab-login" onclick="switchTab('login')">Login</button>
-        <button class="auth-tab" id="tab-register" onclick="switchTab('register')">Register</button>
-      </div>
-
-      <!-- ALERT -->
-      <div class="alert" id="auth-alert"></div>
-
-      <!-- LOGIN FORM -->
-      <div id="form-login">
-        <div class="form-group">
-          <label>Username</label>
-          <input type="text" id="login-username" placeholder="your_username">
-        </div>
-        <div class="form-group">
-          <label>Password</label>
-          <input type="password" id="login-password" placeholder="••••••••">
-        </div>
-        <button class="btn btn-solid form-submit" onclick="handleLogin()">
-          <span id="login-btn-text">Sign In</span>
-        </button>
-        <p class="auth-switch">Don't have an account? <a onclick="switchTab('register')">Register here</a></p>
-      </div>
-
-      <!-- REGISTER FORM -->
-      <div id="form-register" style="display:none">
-        <div class="role-toggle">
-          <button class="role-btn active" id="role-player" onclick="selectRole('player')">⚽ Player</button>
-          <button class="role-btn" id="role-scout" onclick="selectRole('scout')">🔍 Scout</button>
-        </div>
-
-        <div class="form-group">
-          <label>Username</label>
-          <input type="text" id="reg-username" placeholder="choose a username">
-        </div>
-        <div class="form-group">
-          <label>Email</label>
-          <input type="email" id="reg-email" placeholder="you@email.com">
-        </div>
-        <div class="form-group">
-          <label>Password</label>
-          <input type="password" id="reg-password" placeholder="min 8 characters">
-        </div>
-
-        <!-- Player extra fields -->
-        <div id="player-fields">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Full Name</label>
-              <input type="text" id="reg-name" placeholder="Your full name">
-            </div>
-            <div class="form-group">
-              <label>Age</label>
-              <input type="number" id="reg-age" placeholder="e.g. 22" min="14" max="45">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Position</label>
-              <select id="reg-position">
-                <option value="">Select position</option>
-                <option>Goalkeeper</option>
-                <option>Centre-Back</option>
-                <option>Left-Back</option>
-                <option>Right-Back</option>
-                <option>Defensive Midfielder</option>
-                <option>Central Midfielder</option>
-                <option>Attacking Midfielder</option>
-                <option>Left Winger</option>
-                <option>Right Winger</option>
-                <option>Striker</option>
-                <option>Centre-Forward</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Country</label>
-              <input type="text" id="reg-location" placeholder="e.g. Nigeria">
-            </div>
-          </div>
-          <div class="form-group">
-            <label>YouTube / Vimeo Highlight Link</label>
-            <input type="url" id="reg-video" placeholder="https://youtube.com/watch?v=...">
-          </div>
-          <div class="form-group">
-            <label>WhatsApp / Contact Info</label>
-            <input type="text" id="reg-contact" placeholder="+44 7700 000000 or email">
-          </div>
-          <div class="form-group">
-            <label>Bio (optional)</label>
-            <textarea id="reg-bio" placeholder="Tell scouts about yourself..."></textarea>
-          </div>
-        </div>
-
-        <button class="btn btn-solid form-submit" onclick="handleRegister()">
-          <span id="register-btn-text">Create Account</span>
-        </button>
-        <p class="auth-switch">Already registered? <a onclick="switchTab('login')">Login here</a></p>
-      </div>
-    </div>
-  </section>
+  <section id="auth-page"><div class="auth-container"><div class="auth-header"><h2>StudsMudd</h2><p>Your global football career starts here</p></div><div class="auth-tab-row"><button class="auth-tab active" id="tab-login" onclick="switchTab('login')">Login</button><button class="auth-tab" id="tab-register" onclick="switchTab('register')">Register</button></div><div class="alert" id="auth-alert"></div>
+  <div id="form-login"><div class="form-group"><label>Username</label><input type="text" id="login-username" placeholder="your_username"></div><div class="form-group"><label>Password</label><input type="password" id="login-password" placeholder="••••••••"></div><button class="btn btn-solid form-submit" onclick="handleLogin()"><span id="login-btn-text">Sign In</span></button><p class="auth-switch">Don't have an account? <a onclick="switchTab('register')">Register here</a></p></div>
+  <div id="form-register" style="display:none"><div class="role-toggle"><button class="role-btn active" id="role-player" onclick="selectRole('player')">⚽ Player</button><button class="role-btn" id="role-scout" onclick="selectRole('scout')">🔍 Scout</button></div>
+  <div class="form-group"><label>Username</label><input type="text" id="reg-username"></div><div class="form-group"><label>Email</label><input type="email" id="reg-email"></div><div class="form-group"><label>Password</label><input type="password" id="reg-password"></div>
+  <div id="player-fields"><div class="form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;"><div class="form-group"><label>Full Name</label><input type="text" id="reg-name"></div><div class="form-group"><label>Age</label><input type="number" id="reg-age"></div></div><div class="form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;"><div class="form-group"><label>Position</label><select id="reg-position"><option>Select</option><option>Goalkeeper</option><option>Centre-Back</option><option>Striker</option></select></div><div class="form-group"><label>Country</label><input type="text" id="reg-location"></div></div><div class="form-group"><label>YouTube / Vimeo Link</label><input type="url" id="reg-video"></div><div class="form-group"><label>WhatsApp / Contact</label><input type="text" id="reg-contact"></div><div class="form-group"><label>Bio</label><textarea id="reg-bio"></textarea></div></div>
+  <button class="btn btn-solid form-submit" onclick="handleRegister()"><span id="register-btn-text">Create Account</span></button><p class="auth-switch">Already registered? <a onclick="switchTab('login')">Login here</a></p></div></div></section>
 </div>
 
-<!-- ======== PLAYER DASHBOARD ======== -->
-<div id="view-player" class="view">
-  <section id="player-dash">
-    <div class="dash-header">
-      <div>
-        <div class="about-label">Player Dashboard</div>
-        <h2>Welcome back, <span id="player-name-display">Player</span></h2>
-      </div>
-      <button class="btn btn-outline" onclick="showView('auth'); switchTab('login'); logout()">Switch Account</button>
-    </div>
+<div id="view-player" class="view"><section id="player-dash"><div class="dash-header"><div><div class="about-label">Player Dashboard</div><h2>Welcome back, <span id="player-name-display">Player</span></h2></div><button class="btn btn-outline" onclick="showView('auth'); logout()">Switch Account</button></div><div class="profile-card"><div class="profile-card-title">Your Scouting Profile</div><div id="player-profile-display"></div><div class="profile-video-embed" id="player-video-embed"><div class="no-video">No highlight clip added yet</div></div></div></section></div>
 
-    <div class="setup-banner">
-      <h3>⚙️ Setup Required — Connect Your Google Sheet</h3>
-      <p>To save and display your profile, replace the SheetDB URL in the script below.<br>
-        1. Create a Google Sheet with two sheets: <code>Users</code> and <code>PlayerProfiles</code> (see headers in the code comments).<br>
-        2. Go to <code>sheetdb.io</code>, connect your sheet, and copy your API URL.<br>
-        3. In this file, find <code>SHEETDB_API_URL</code> and replace the placeholder with your URL.</p>
-    </div>
+<div id="view-scout" class="view"><section id="scout-feed"><div class="dash-header"><div><div class="about-label">Scout Dashboard</div><h2>Talent <span id="player-count-badge">Feed</span></h2></div><button class="btn btn-outline" onclick="showView('auth'); logout()">Switch Account</button></div><div class="feed-controls"><input class="search-bar" id="search-input" placeholder="Search by name or country..." oninput="filterPlayers()"><select class="filter-select" id="filter-position" onchange="filterPlayers()"><option value="">All Positions</option><option>Goalkeeper</option><option>Striker</option></select><button class="btn btn-outline" onclick="fetchPlayers()">↺ Refresh</button></div><div class="talent-grid" id="talent-grid"><div class="loading-row"><div class="spinner"></div> Loading talent...</div></div></section></div>
 
-    <div class="profile-card" id="player-profile-card">
-      <div class="profile-card-title">Your Scouting Profile</div>
-      <div id="player-profile-display"></div>
-      <div class="profile-video-embed" id="player-video-embed">
-        <div class="no-video">No highlight clip added yet</div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ======== SCOUT FEED ======== -->
-<div id="view-scout" class="view">
-  <section id="scout-feed">
-    <div class="dash-header">
-      <div>
-        <div class="about-label">Scout Dashboard</div>
-        <h2>Talent <span id="player-count-badge">Feed</span></h2>
-      </div>
-      <button class="btn btn-outline" onclick="showView('auth'); switchTab('login'); logout()">Switch Account</button>
-    </div>
-
-    <div class="setup-banner" id="scout-setup-banner">
-      <h3>⚙️ Setup Required — Connect Your Google Sheet</h3>
-      <p>Replace <code>SHEETDB_API_URL</code> in the JavaScript with your SheetDB endpoint to load real player data. Demo cards are shown below.</p>
-    </div>
-
-    <div class="feed-controls">
-      <input class="search-bar" type="text" id="search-input" placeholder="Search by name or country..." oninput="filterPlayers()">
-      <select class="filter-select" id="filter-position" onchange="filterPlayers()">
-        <option value="">All Positions</option>
-        <option>Goalkeeper</option>
-        <option>Centre-Back</option>
-        <option>Left-Back</option>
-        <option>Right-Back</option>
-        <option>Defensive Midfielder</option>
-        <option>Central Midfielder</option>
-        <option>Attacking Midfielder</option>
-        <option>Left Winger</option>
-        <option>Right Winger</option>
-        <option>Striker</option>
-        <option>Centre-Forward</option>
-      </select>
-      <button class="btn btn-outline" onclick="fetchPlayers()">↺ Refresh</button>
-    </div>
-
-    <div class="talent-grid" id="talent-grid">
-      <div class="loading-row"><div class="spinner"></div> Loading talent...</div>
-    </div>
-  </section>
-</div>
-
-<!-- ======================================================
-  JAVASCRIPT — StudsMudd App Logic
-  ====================================================== -->
 <script>
 // ============================================================
-// ⚙️  CONFIGURATION — REPLACE WITH YOUR SHEETDB URLS
+// ✅ CONFIGURATION: YOUR SHEETDB URL (already replaced)
 // ============================================================
-// Steps:
-// 1. Create a Google Sheet with two tabs:
-//    Sheet 1 "Users":       Username | Password | UserType | Email
-//    Sheet 2 "PlayerProfiles": Username | FullName | Position | Age | Location | VideoLink | ContactInfo | Bio
-// 2. Go to https://sheetdb.io, import your sheet, copy the API URL
-// 3. Replace the placeholder strings below:
-
 const SHEETDB_API_URL = 'https://sheetdb.io/api/v1/1f2bapzivszuc';
-const DEMO_MODE = false; // Set to false once you've connected SheetDB
+const DEMO_MODE = false;
 
-// ============================================================
-// SESSION STATE
-// ============================================================
 let currentUser = null;
 let allPlayers = [];
 
-// Demo player data (used when DEMO_MODE = false)
-const DEMO_PLAYERS = [
-  {
-    Username: 'ahmed_k',
-    FullName: 'Ahmed Kariuki',
-    Position: 'Striker',
-    Age: '21',
-    Location: 'Kenya',
-    VideoLink: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    ContactInfo: '+254 712 000000',
-    Bio: 'Explosive pace, strong in the air, 23 goals last season for Nairobi FC youth team.'
-  },
-  {
-    Username: 'luiz_br',
-    FullName: 'Luiz Eduardo',
-    Position: 'Attacking Midfielder',
-    Age: '19',
-    Location: 'Brazil',
-    VideoLink: 'https://www.youtube.com/watch?v=3JZ_D3ELwOQ',
-    ContactInfo: 'luiz.eduardo@email.com',
-    Bio: 'Creative playmaker with vision beyond his years. Captain of the U21 regional squad.'
-  },
-  {
-    Username: 'tariq_pk',
-    FullName: 'Tariq Mehmood',
-    Position: 'Centre-Back',
-    Age: '24',
-    Location: 'Pakistan',
-    VideoLink: '',
-    ContactInfo: '+92 300 0000000',
-    Bio: 'Commanding defender, strong in aerial duels, professional experience in the premier division.'
-  },
-  {
-    Username: 'ade_ng',
-    FullName: 'Adewale Okonkwo',
-    Position: 'Left Winger',
-    Age: '20',
-    Location: 'Nigeria',
-    VideoLink: 'https://www.youtube.com/watch?v=oHg5SJYRHA0',
-    ContactInfo: 'ade.plays@gmail.com',
-    Bio: 'Tricky winger, beats defenders with ease, top scorer in Lagos inter-state championship.'
-  },
-];
-
-// ============================================================
-// VIEW ROUTER
-// ============================================================
-function showView(view) {
-  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  document.getElementById('view-' + view).classList.add('active');
-  window.scrollTo(0, 0);
-}
-
-function scrollToAbout() {
-  setTimeout(() => {
-    document.getElementById('about-section').scrollIntoView({ behavior: 'smooth' });
-  }, 50);
-}
-
-// ============================================================
-// AUTH TABS & ROLE SELECTION
-// ============================================================
+function showView(view) { document.querySelectorAll('.view').forEach(v => v.classList.remove('active')); document.getElementById('view-' + view).classList.add('active'); window.scrollTo(0,0); }
+function scrollToAbout() { setTimeout(() => document.getElementById('about-section').scrollIntoView({ behavior: 'smooth' }), 50); }
+function switchTab(tab) { document.getElementById('form-login').style.display = tab === 'login' ? 'block' : 'none'; document.getElementById('form-register').style.display = tab === 'register' ? 'block' : 'none'; document.getElementById('tab-login').classList.toggle('active', tab === 'login'); document.getElementById('tab-register').classList.toggle('active', tab === 'register'); clearAlert(); }
+function selectRole(role) { selectedRole = role; document.getElementById('role-player').classList.toggle('active', role === 'player'); document.getElementById('role-scout').classList.toggle('active', role === 'scout'); document.getElementById('player-fields').style.display = role === 'player' ? 'block' : 'none'; }
 let selectedRole = 'player';
+function showAlert(msg, type = 'error') { const el = document.getElementById('auth-alert'); el.textContent = msg; el.className = 'alert ' + type + ' show'; }
+function clearAlert() { const el = document.getElementById('auth-alert'); el.className = 'alert'; }
 
-function switchTab(tab) {
-  document.getElementById('form-login').style.display = tab === 'login' ? 'block' : 'none';
-  document.getElementById('form-register').style.display = tab === 'register' ? 'block' : 'none';
-  document.getElementById('tab-login').classList.toggle('active', tab === 'login');
-  document.getElementById('tab-register').classList.toggle('active', tab === 'register');
-  clearAlert();
-}
-
-function selectRole(role) {
-  selectedRole = role;
-  document.getElementById('role-player').classList.toggle('active', role === 'player');
-  document.getElementById('role-scout').classList.toggle('active', role === 'scout');
-  document.getElementById('player-fields').style.display = role === 'player' ? 'block' : 'none';
-}
-
-// ============================================================
-// ALERT HELPERS
-// ============================================================
-function showAlert(msg, type = 'error') {
-  const el = document.getElementById('auth-alert');
-  el.textContent = msg;
-  el.className = 'alert ' + type + ' show';
-}
-
-function clearAlert() {
-  const el = document.getElementById('auth-alert');
-  el.className = 'alert';
-}
-
-// ============================================================
-// REGISTER
-// ============================================================
 async function handleRegister() {
   clearAlert();
   const username = document.getElementById('reg-username').value.trim();
-  const email    = document.getElementById('reg-email').value.trim();
+  const email = document.getElementById('reg-email').value.trim();
   const password = document.getElementById('reg-password').value;
-
-  if (!username || !email || !password) return showAlert('Username, email, and password are required.');
-  if (password.length < 8) return showAlert('Password must be at least 8 characters.');
-
-  const btnText = document.getElementById('register-btn-text');
-  btnText.innerHTML = '<div class="spinner"></div>';
-
-  if (DEMO_MODE) {
-    // Demo mode — simulate success
-    await sleep(800);
-    currentUser = { username, usertype: selectedRole, email };
-    afterLogin();
-    btnText.textContent = 'Create Account';
-    return;
-  }
-
+  if (!username || !email || !password) return showAlert('All fields required.');
+  if (password.length < 4) return showAlert('Password min 4 chars');
+  const btn = document.getElementById('register-btn-text');
+  btn.innerHTML = '<div class="spinner"></div>';
   try {
-    // Save user credentials
-    await fetch(SHEETDB_API_URL + '/Users', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ data: [{ Username: username, Password: password, UserType: selectedRole, Email: email }] })
+    const userRes = await fetch(SHEETDB_API_URL + '/Users', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ data: [{ Username: username, Password: password, UserType: selectedRole, Email: email, CreatedAt: new Date().toISOString() }] })
     });
-
-    // Save player profile (if player role)
+    if (!userRes.ok) throw new Error('User save failed');
     if (selectedRole === 'player') {
-      const profileData = {
-        Username:    username,
-        FullName:    document.getElementById('reg-name').value.trim(),
-        Position:    document.getElementById('reg-position').value,
-        Age:         document.getElementById('reg-age').value,
-        Location:    document.getElementById('reg-location').value.trim(),
-        VideoLink:   document.getElementById('reg-video').value.trim(),
-        ContactInfo: document.getElementById('reg-contact').value.trim(),
-        Bio:         document.getElementById('reg-bio').value.trim(),
+      const profile = {
+        Username: username, FullName: document.getElementById('reg-name').value.trim(),
+        Position: document.getElementById('reg-position').value, Age: document.getElementById('reg-age').value,
+        Location: document.getElementById('reg-location').value.trim(), VideoLink: document.getElementById('reg-video').value.trim(),
+        ContactInfo: document.getElementById('reg-contact').value.trim(), Bio: document.getElementById('reg-bio').value.trim(),
+        CreatedAt: new Date().toISOString()
       };
-      await fetch(SHEETDB_API_URL + '/PlayerProfiles', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ data: [profileData] })
-      });
+      await fetch(SHEETDB_API_URL + '/PlayerProfiles', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ data: [profile] }) });
     }
-
     currentUser = { username, usertype: selectedRole, email };
     afterLogin();
-  } catch (err) {
-    showAlert('Registration failed. Check your SheetDB URL and try again.');
-    console.error(err);
-  }
-
-  btnText.textContent = 'Create Account';
+  } catch (err) { showAlert('Registration error: check sheet tabs & API URL'); console.error(err); }
+  btn.innerHTML = 'Create Account';
 }
 
-// ============================================================
-// LOGIN
-// ============================================================
 async function handleLogin() {
   clearAlert();
   const username = document.getElementById('login-username').value.trim();
   const password = document.getElementById('login-password').value;
-
-  if (!username || !password) return showAlert('Please enter username and password.');
-
-  const btnText = document.getElementById('login-btn-text');
-  btnText.innerHTML = '<div class="spinner"></div>';
-
-  if (DEMO_MODE) {
-    await sleep(700);
-    // Demo: scout login shows feed, anything else shows player dash
-    const role = username.toLowerCase().includes('scout') ? 'scout' : 'player';
-    currentUser = { username, usertype: role };
-    afterLogin();
-    btnText.textContent = 'Sign In';
-    return;
-  }
-
+  if (!username || !password) return showAlert('Enter credentials');
+  const btn = document.getElementById('login-btn-text');
+  btn.innerHTML = '<div class="spinner"></div>';
   try {
-    const res = await fetch(`${SHEETDB_API_URL}/search?sheet=Users&Username=${encodeURIComponent(username)}&Password=${encodeURIComponent(password)}`);
+    const res = await fetch(`${SHEETDB_API_URL}/search?sheet=Users&Username=${encodeURIComponent(username)}`);
     const data = await res.json();
-    if (!data || data.length === 0) {
-      showAlert('Invalid username or password.');
-    } else {
-      currentUser = { username, usertype: data[0].UserType, email: data[0].Email };
-      afterLogin();
-    }
-  } catch (err) {
-    showAlert('Login failed. Check your SheetDB URL.');
-    console.error(err);
-  }
-
-  btnText.textContent = 'Sign In';
+    const user = Array.isArray(data) ? data.find(u => u.Username === username && u.Password === password) : null;
+    if (user) { currentUser = { username, usertype: user.UserType, email: user.Email }; afterLogin(); }
+    else showAlert('Invalid username/password');
+  } catch (err) { showAlert('Login failed'); }
+  btn.innerHTML = 'Sign In';
 }
 
-// ============================================================
-// POST-LOGIN ROUTING
-// ============================================================
 function afterLogin() {
-  // Update header
   document.getElementById('user-status').style.display = 'flex';
   document.getElementById('username-display').textContent = currentUser.username;
   document.getElementById('login-btn').style.display = 'none';
   document.getElementById('register-btn').style.display = 'none';
   document.getElementById('logout-btn').style.display = 'inline-flex';
-
-  if (currentUser.usertype.toLowerCase() === 'scout') {
-    showView('scout');
-    fetchPlayers();
-  } else {
-    showView('player');
-    loadPlayerProfile();
-  }
+  if (currentUser.usertype === 'scout') { showView('scout'); fetchPlayers(); }
+  else { showView('player'); loadPlayerProfile(); }
 }
 
-// Save login to localStorage (keeps after refresh)
-function saveLogin(user) {
-  localStorage.setItem('savedUser', JSON.stringify(user));
-}
+function logout() { currentUser = null; document.getElementById('user-status').style.display = 'none'; document.getElementById('login-btn').style.display = 'inline-flex'; document.getElementById('register-btn').style.display = 'inline-flex'; document.getElementById('logout-btn').style.display = 'none'; showView('home'); }
 
-function checkSavedLogin() {
-  const saved = localStorage.getItem('savedUser');
-  if (saved && !currentUser) {
-    currentUser = JSON.parse(saved);
-    afterLogin();
-  }
-}
-
-function logout() {
-  currentUser = null;
-  localStorage.removeItem('savedUser'); // Add this line
-  // ... rest of existing logout code
-}
-
-// ============================================================
-// PLAYER DASHBOARD
-// ============================================================
 async function loadPlayerProfile() {
   document.getElementById('player-name-display').textContent = currentUser.username;
-  const display = document.getElementById('player-profile-display');
-  const videoEl = document.getElementById('player-video-embed');
-
-  if (DEMO_MODE) {
-    const p = DEMO_PLAYERS[0];
-    display.innerHTML = renderProfileInfo(p);
-    setVideoEmbed(videoEl, p.VideoLink);
-    return;
-  }
-
+  const displayDiv = document.getElementById('player-profile-display');
+  const videoDiv = document.getElementById('player-video-embed');
   try {
     const res = await fetch(`${SHEETDB_API_URL}/search?sheet=PlayerProfiles&Username=${encodeURIComponent(currentUser.username)}`);
     const data = await res.json();
-    if (data && data.length > 0) {
-      display.innerHTML = renderProfileInfo(data[0]);
-      setVideoEmbed(videoEl, data[0].VideoLink);
-    } else {
-      display.innerHTML = '<p style="color:var(--muted)">Profile not yet created. Register as a player to add your details.</p>';
-    }
-  } catch (err) {
-    display.innerHTML = '<p style="color:var(--muted)">Could not load profile. Check your SheetDB connection.</p>';
-  }
+    if (data && data.length) {
+      const p = data[0];
+      displayDiv.innerHTML = `<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;"><div><div style="color:var(--muted);font-size:0.75rem;">Name</div><div style="font-weight:700">${escapeHTML(p.FullName || '')}</div></div><div><div style="color:var(--muted);font-size:0.75rem;">Position</div><div>${escapeHTML(p.Position || '')}</div></div><div><div style="color:var(--muted);font-size:0.75rem;">Age</div><div>${escapeHTML(p.Age || '')}</div></div><div><div style="color:var(--muted);font-size:0.75rem;">Country</div><div>${escapeHTML(p.Location || '')}</div></div></div><div><div style="color:var(--muted);font-size:0.75rem;">Bio</div><div>${escapeHTML(p.Bio || '')}</div></div>`;
+      const embed = getYouTubeEmbed(p.VideoLink);
+      if (embed) videoDiv.innerHTML = `<iframe src="${embed}" allowfullscreen></iframe>`;
+      else videoDiv.innerHTML = `<div class="no-video">No highlight clip</div>`;
+    } else { displayDiv.innerHTML = '<p style="color:var(--muted)">Complete your profile during registration</p>'; }
+  } catch(e) { displayDiv.innerHTML = '<p>Error loading profile</p>'; }
 }
 
-function renderProfileInfo(p) {
-  return `
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem">
-      <div><div style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem">Name</div><div style="font-family:var(--font-display);font-size:1.2rem;font-weight:700">${p.FullName || '—'}</div></div>
-      <div><div style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem">Position</div><div style="font-family:var(--font-display);font-size:1.2rem;font-weight:700">${p.Position || '—'}</div></div>
-      <div><div style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem">Age</div><div>${p.Age || '—'}</div></div>
-      <div><div style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem">Country</div><div>${p.Location || '—'}</div></div>
-    </div>
-    <div><div style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem">Bio</div><div style="color:var(--muted);font-size:0.9rem">${p.Bio || 'No bio added.'}</div></div>
-  `;
-}
-
-// ============================================================
-// SCOUT FEED
-// ============================================================
 async function fetchPlayers() {
   const grid = document.getElementById('talent-grid');
   grid.innerHTML = '<div class="loading-row"><div class="spinner"></div> Loading talent...</div>';
-
-  if (DEMO_MODE) {
-    await sleep(600);
-    allPlayers = DEMO_PLAYERS;
-    renderPlayers(allPlayers);
-    return;
-  }
-
   try {
-    const res = await fetch(`${SHEETDB_API_URL}?sheet=PlayerProfiles`);
+    const res = await fetch(`${SHEETDB_API_URL}/PlayerProfiles`);
     const data = await res.json();
     allPlayers = Array.isArray(data) ? data : [];
     renderPlayers(allPlayers);
-  } catch (err) {
-    grid.innerHTML = '<div class="empty-state"><h3>Connection Error</h3><p>Replace SHEETDB_API_URL to load real data.</p></div>';
-  }
+  } catch(e) { grid.innerHTML = '<div class="empty-state"><h3>Connection Error</h3><p>Verify SheetDB URL and sheet name: PlayerProfiles</p></div>'; }
 }
-
 function filterPlayers() {
-  const q    = document.getElementById('search-input').value.toLowerCase();
-  const pos  = document.getElementById('filter-position').value;
-  const filtered = allPlayers.filter(p => {
-    const matchQ   = !q || (p.FullName || '').toLowerCase().includes(q) || (p.Location || '').toLowerCase().includes(q);
-    const matchPos = !pos || p.Position === pos;
-    return matchQ && matchPos;
-  });
+  const q = document.getElementById('search-input').value.toLowerCase();
+  const pos = document.getElementById('filter-position').value;
+  const filtered = allPlayers.filter(p => (!q || (p.FullName || '').toLowerCase().includes(q) || (p.Location || '').toLowerCase().includes(q)) && (!pos || p.Position === pos));
   renderPlayers(filtered);
 }
-
 function renderPlayers(players) {
   const grid = document.getElementById('talent-grid');
-  const badge = document.getElementById('player-count-badge');
-  badge.textContent = `Feed (${players.length})`;
-
-  if (players.length === 0) {
-    grid.innerHTML = '<div class="empty-state"><h3>No Players Found</h3><p>Try adjusting your filters or search term.</p></div>';
-    return;
-  }
-
-  grid.innerHTML = players.map(p => buildPlayerCard(p)).join('');
+  document.getElementById('player-count-badge').textContent = `Feed (${players.length})`;
+  if (!players.length) { grid.innerHTML = '<div class="empty-state"><h3>No Players Found</h3></div>'; return; }
+  grid.innerHTML = players.map(p => `<div class="player-card"><div class="card-video">${getYouTubeEmbed(p.VideoLink) ? `<iframe src="${getYouTubeEmbed(p.VideoLink)}" allowfullscreen></iframe>` : '<div class="card-video-placeholder">🎬 No clip</div>'}</div><div class="card-body"><div class="card-name">${escapeHTML(p.FullName || p.Username)}</div><div class="card-position">${escapeHTML(p.Position || 'Player')}</div><div class="card-meta"><span>🎂 ${p.Age || '?'}</span><span>📍 ${escapeHTML(p.Location || '—')}</span></div>${p.Bio ? `<div class="card-bio">${escapeHTML(p.Bio)}</div>` : ''}<div class="card-contact">${p.ContactInfo ? (p.ContactInfo.includes('@') ? `<a class="contact-link" href="mailto:${escapeHTML(p.ContactInfo)}">✉️ ${escapeHTML(p.ContactInfo)}</a>` : `<a class="contact-link" href="https://wa.me/${p.ContactInfo.replace(/\\D/g,'')}" target="_blank">💬 ${escapeHTML(p.ContactInfo)}</a>`) : ''}</div></div></div>`).join('');
 }
-
-function buildPlayerCard(p) {
-  const embedSrc = getYouTubeEmbed(p.VideoLink);
-  const videoHTML = embedSrc
-    ? `<iframe src="${embedSrc}" allowfullscreen loading="lazy" title="${p.FullName} highlights"></iframe>`
-    : `<div class="card-video-placeholder">
-         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16"/></svg>
-         No clip available
-       </div>`;
-
-  const contactLinks = p.ContactInfo
-    ? p.ContactInfo.includes('@')
-      ? `<a class="contact-link" href="mailto:${p.ContactInfo}">✉️ ${p.ContactInfo}</a>`
-      : `<a class="contact-link" href="https://wa.me/${p.ContactInfo.replace(/\D/g,'')}" target="_blank">💬 ${p.ContactInfo}</a>`
-    : '';
-
-  return `
-    <div class="player-card">
-      <div class="card-video">${videoHTML}</div>
-      <div class="card-body">
-        <div class="card-name">${escapeHTML(p.FullName || p.Username)}</div>
-        <div class="card-position">${escapeHTML(p.Position || 'Unknown')}</div>
-        <div class="card-meta">
-          <span>🎂 ${p.Age ? p.Age + ' yrs' : '—'}</span>
-          <span>📍 ${escapeHTML(p.Location || '—')}</span>
-        </div>
-        ${p.Bio ? `<div class="card-bio">${escapeHTML(p.Bio)}</div>` : ''}
-        <div class="card-contact">${contactLinks}</div>
-      </div>
-    </div>
-  `;
-}
-
-// ============================================================
-// YOUTUBE EMBED CONVERTER
-// ============================================================
-function getYouTubeEmbed(url) {
-  if (!url) return null;
-  // Standard watch URL
-  let match = url.match(/[?&]v=([^&#]+)/);
-  if (match) return `https://www.youtube.com/embed/${match[1]}?rel=0`;
-  // Shortened youtu.be
-  match = url.match(/youtu\.be\/([^?&#]+)/);
-  if (match) return `https://www.youtube.com/embed/${match[1]}?rel=0`;
-  // Vimeo
-  match = url.match(/vimeo\.com\/(\d+)/);
-  if (match) return `https://player.vimeo.com/video/${match[1]}`;
-  return null;
-}
-
-function setVideoEmbed(container, url) {
-  const src = getYouTubeEmbed(url);
-  if (src) {
-    container.innerHTML = `<iframe src="${src}" allowfullscreen title="Highlight reel"></iframe>`;
-  } else {
-    container.innerHTML = `<div class="no-video">No highlight clip added</div>`;
-  }
-}
-
-// ============================================================
-// UTILS
-// ============================================================
-function escapeHTML(str) {
-  const d = document.createElement('div');
-  d.appendChild(document.createTextNode(str));
-  return d.innerHTML;
-}
-
-function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
-
-// ============================================================
-// SCROLL ANIMATIONS
-// ============================================================
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.15 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-</script>
-<script>
-// Check for saved login when page loads
-checkSavedLogin();
+function getYouTubeEmbed(url) { if (!url) return null; let m = url.match(/[?&]v=([^&#]+)/); if (m) return `https://www.youtube.com/embed/${m[1]}?rel=0`; m = url.match(/youtu\\.be\\/([^?&#]+)/); if (m) return `https://www.youtube.com/embed/${m[1]}?rel=0`; m = url.match(/vimeo\\.com\\/(\\d+)/); if (m) return `https://player.vimeo.com/video/${m[1]}`; return null; }
+function escapeHTML(str) { if(!str) return ''; const d=document.createElement('div'); d.appendChild(document.createTextNode(str)); return d.innerHTML; }
+setTimeout(() => { document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible')); }, 100);
 </script>
 </body>
 </html>
